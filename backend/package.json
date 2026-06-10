@@ -1,0 +1,29 @@
+{
+  "name": "ams-backend",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch --env-file=.env.local index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "mongoose": "^9.6.3",
+    "bcryptjs": "^3.0.3",
+    "jsonwebtoken": "^9.0.3",
+    "uuid": "^14.0.0",
+    "axios": "^1.17.0",
+    "nodemailer": "^8.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "@types/express": "^5.0.6",
+    "@types/cors": "^2.8.17",
+    "typescript": "5.7.3",
+    "tsx": "^4.22.4"
+  }
+}
