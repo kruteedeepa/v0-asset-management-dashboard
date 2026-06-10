@@ -7,10 +7,12 @@ import { AssetsByCategory } from "./assets-by-category";
 import { AssetsByStatus } from "./assets-by-status";
 import { RecentActivity } from "./recent-activity";
 import { RecentAssetsTable } from "./recent-assets-table";
+import { ToastProvider } from "@/components/shared/toast-provider";
 
 export function DashboardLayout() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <ToastProvider />
       {/* Sidebar */}
       <SidebarNav />
 
@@ -27,15 +29,24 @@ export function DashboardLayout() {
 
         {/* Action Buttons */}
         <div className="flex gap-4 mb-8">
-          <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2">
+          <a
+            href="/dashboard/assets"
+            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+          >
             <span>+</span> Add Asset
-          </button>
-          <button className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2">
+          </a>
+          <a
+            href="/dashboard/scan-qr"
+            className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+          >
             <span>⊞</span> Scan QR Code
-          </button>
-          <button className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2">
+          </a>
+          <a
+            href="/dashboard/reports"
+            className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+          >
             <span>📄</span> Generate Report
-          </button>
+          </a>
         </div>
 
         {/* Stats Cards */}
